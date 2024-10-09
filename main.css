@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.game-container {
+    position: relative;
+    border: 2px solid #000;
+    background-color: #fff;
+    text-align: center;
+}
+
+#score {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#instructions {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #333;
+}
+
+#languageButton {
+    position: absolute;
+    top: -35px;
+    right: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
