@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Игра Змейка</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="game-container">
-    <div id="score">Счет: 0</div>
+<div id="gameContainer">
+    <div id="score">Score: 0</div>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <div id="instructions">Нажмите пробел для паузы</div>
-    <button id="languageButton">Сменить язык</button>
+    <div id="controls">
+        <button id="pauseButton">Pause</button>
+        <button id="changeLanguageButton">Change Language</button>
+    </div>
+    <div id="instructions">Press space to pause the game</div>
+    <div id="mobileControls">
+        <button id="upButton">&uarr;</button>
+        <div>
+            <button id="leftButton">&larr;</button>
+            <button id="downButton">&darr;</button>
+            <button id="rightButton">&rarr;</button>
+        </div>
+    </div>
+    <button id="restartButton" style="display: none;">Restart</button>
 </div>
-<script src="main.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
