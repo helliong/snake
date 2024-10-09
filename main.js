@@ -72,6 +72,14 @@ function updateLanguage() {
     }
 }
 
+// Обработчик событий для сенсорного экрана
+canvas.addEventListener('touchstart', (evt) => {
+    const touch = evt.touches[0];
+    const x = touch.clientX - canvas.offsetLeft;
+    const y = touch.clientY - canvas.offsetTop;
+    snake.changeDirectionFromTouch(x, y);
+});
+
 // Класс Snake для управления змейкой
 function Snake() {
     this.x = 0; // Начальная позиция змейки по оси X
@@ -147,6 +155,22 @@ function Snake() {
                     this.ySpeed = 0;
                 }
                 break;
+        }
+    };
+
+    // Метод для изменения направления змейки с помощью сенсорного экрана
+    this.changeDirectionFromTouch = function(x, y) {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        if (x < centerX && y < centerY) {
+            this.changeDirection('Up');
+        } else if (x > centerX && y < centerY) {
+            this.changeDirection('Right');
+        } else if (x < centerX && y > centerY) {
+            this.changeDirection('Left');
+        } else if (x > centerX && y > centerY) {
+            this.changeDirection('Down');
         }
     };
 
